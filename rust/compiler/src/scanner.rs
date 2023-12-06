@@ -27,6 +27,7 @@ fn scan_number_literal(chars: &mut Peekable<Chars>) -> Token {
 
 fn scan_string_literal(chars: &mut Peekable<Chars>) -> Token {
 
+
 }
 
 fn scan_identifier_and_keyword(chars: &mut Peekable<Chars>) -> Token {
@@ -38,6 +39,14 @@ fn scan_operator_and_punctuator(chars: &mut Peekable<Chars>) -> Token {
 }
 
 fn get_char_type(c: char) -> CharType {
+    match c {
+        ' ' | '\t' | '\n' | '\r' => CharType::WhiteSpace,
+        '0'..='9' => CharType::NumberLiteral,
+        '\''  => CharType::StringLiteral,
+        'a'..='z' | 'A'..='Z' | '_' => CharType::IdentifierAndKeyword,
+        '!'..='/' | ':'..='@' | '['..='`' | '{'..='~' if c != '\'' => CharType::OperatorAndPunctuator,
+        _ => CharType::Unknown,
+    }
 
 }
 
