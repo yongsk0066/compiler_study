@@ -3,8 +3,9 @@
 auto main(int argc, char **argv) -> int
 {
   string sourceCode = R""""(
-    function main() {
-      print 'Hello, World!';
+    function main(x, y) {
+      var z = x + y;
+      return z;
     }
   )"""";
   auto tokenList = scan(sourceCode);
