@@ -5,6 +5,7 @@ auto main(int argc, char **argv) -> int
   string sourceCode = R""""(
     function main(x, y) {
       var z = x + y;
+      print 'Hello, World!', z;
       return z;
     }
   )"""";
