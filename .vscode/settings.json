@@ -78,6 +78,7 @@
     "type_traits": "cpp",
     "utility": "cpp",
     "memory": "cpp",
-    "version": "cpp"
+    "version": "cpp",
+    "list": "cpp"
   }
 }
